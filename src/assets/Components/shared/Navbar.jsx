@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 
 const Navbar = () => {
-  const navLiks = (
+  const navLinks = (
     <>
       <li>
         {" "}
@@ -64,16 +64,16 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              {navLiks}
+              {navLinks}
             </ul>
           </div>
-          <NavLink to="/" className="btn btn-ghost text-xl">
+          <NavLink to="/" className="btn btn-ghost text-xl font-bold">
             Book Vibe
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-lg space-x-2">
-            {navLiks}
+          <ul className="menu menu-horizontal px-1 text-[16px] space-x-2">
+            {navLinks}
           </ul>
         </div>
         <div className="navbar-end space-x-4 ">
