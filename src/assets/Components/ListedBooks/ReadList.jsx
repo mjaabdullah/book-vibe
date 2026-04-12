@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { BookContext } from "../../../context/BookContext";
+import Book from "./Book";
 
 const ReadList = ({ sortingType }) => {
   const { markAsRead } = useContext(BookContext);
@@ -12,13 +13,9 @@ const ReadList = ({ sortingType }) => {
     }
   }
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-4">
       {sortList.map((book) => (
-        <div key={book.bookId}>
-          <h2>{book.bookName}</h2>
-          <p>Pages: {book.totalPages}</p>
-          <p>Rating: {book.rating}</p>
-        </div>
+        <Book key={book.bookId} book={book} />
       ))}
     </div>
   );
