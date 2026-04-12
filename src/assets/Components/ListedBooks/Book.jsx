@@ -3,8 +3,8 @@ import { RiGroupLine } from "react-icons/ri";
 
 const Book = ({ book }) => {
   return (
-    <div className="card card-side bg-base-100 shadow-md border border-base-200 rounded-2xl overflow-hidden">
-      <figure className="min-w-30 max-w-30 p-4 flex items-center justify-center">
+    <div className="card card-side bg-base-100 shadow-md border border-base-200 rounded-2xl overflow-hidden flex-col md:flex-row">
+      <figure className="min-w-30 max-w-full md:max-w-30 p-4 flex items-center justify-center">
         <img
           src={book.image}
           alt={book.bookName}
@@ -56,6 +56,9 @@ const Book = ({ book }) => {
             View Details
           </button>
         </div>
+      </div>
+      <div className="card-actions flex-col items-center justify-center p-4">
+        <button className="btn w-full md:w-auto btn-warning">Delete</button>
       </div>
     </div>
   );

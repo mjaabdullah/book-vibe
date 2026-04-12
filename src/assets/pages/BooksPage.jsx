@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ReadList from "../Components/ListedBooks/ReadList";
@@ -11,8 +12,12 @@ const BooksPage = () => {
     <div className="max-w-7xl mx-auto my-10 p-2.5">
       <div className="flex justify-center">
         <div className="dropdown dropdown-center my-3">
-          <div tabIndex={0} role="button" className="btn m-1">
-            Sort By: {sortingType || ""} ⬇️
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-lg bg-green-500 text-white border-none rounded-xl font-semibold text-lg "
+          >
+            Sort By: {sortingType || ""} <IoIosArrowDown />
           </div>
           <ul
             tabIndex="-1"

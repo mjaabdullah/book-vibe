@@ -76,8 +76,8 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="navbar-end space-x-4 ">
-          <button className="btn btn-success text-white">Sign In</button>
+        <div className="navbar-end space-x-3 ">
+          <button className="btn btn-success text-white ">Sign In</button>
           <button className="btn btn-accent text-white">Sign Up</button>
         </div>
       </div>
