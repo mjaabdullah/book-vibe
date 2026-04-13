@@ -21,8 +21,8 @@ const Book = ({ book }) => {
         <div className="flex items-center gap-2 flex-wrap mt-1">
           <span className="flex items-center gap-2 flex-wrap font-medium">
             <span className="text-gray-500">Tag</span>
-            {book.tags.map((tag) => (
-              <span key={tag} className="badge badge-warning badge-outline">
+            {book.tags.map((tag, ind) => (
+              <span key={ind} className="badge badge-warning badge-outline">
                 #{tag}
               </span>
             ))}

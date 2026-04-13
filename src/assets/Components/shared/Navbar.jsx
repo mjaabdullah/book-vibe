@@ -77,8 +77,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3 ">
-          <button className="btn btn-success text-white ">Sign In</button>
-          <button className="btn btn-accent text-white">Sign Up</button>
+          <button className="btn btn-xs sm:btn-sm md:btn-md btn-success text-white ">
+            Sign In
+          </button>
+          <button className="btn btn-xs sm:btn-sm md:btn-md btn-accent text-white">
+            Sign Up
+          </button>
         </div>
       </div>
     </div>

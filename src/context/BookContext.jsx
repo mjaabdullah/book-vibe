@@ -48,6 +48,14 @@ const BookProvider = ({ children }) => {
     toast.success(`You have added "${currentBook.bookName}" to your wishlist.`);
     setListToLocalDB("wishList", currentBook);
   };
+
+  const handleDeleteFromReadList = (bookId) => {
+    const updatedReadList = markAsRead.filter((book) => book.bookId !== bookId);
+    setMarkAsRead(updatedReadList);
+    setListToLocalDB("redList", updatedReadList);
+    toast.success("Book removed from read list.");
+  };
+
   const data = {
     markAsRead,
     setMarkAsRead,

@@ -12,6 +12,7 @@ const ReadList = ({ sortingType }) => {
       sortList = [...markAsRead].sort((a, b) => a.rating - b.rating);
     }
   }
+
   return (
     <div className="grid grid-cols-1 gap-4">
       {sortList.map((book) => (
