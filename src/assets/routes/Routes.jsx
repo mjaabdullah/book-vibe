@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router";
+import Loading from "../Components/Loading/Loading";
 import MainLayout from "../layout/MainLayout";
 import BookDetails from "../pages/BookDetails";
 import BooksPage from "../pages/BooksPage";
@@ -9,6 +10,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
+    HydrateFallback: Loading,
     children: [
       {
         index: true,

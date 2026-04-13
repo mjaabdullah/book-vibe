@@ -5,7 +5,9 @@ import { BookContext } from "../../context/BookContext";
 const BookDetails = () => {
   const { id } = useParams();
   const loaderData = useLoaderData();
+
   const book = loaderData.find((b) => b.bookId === Number(id));
+
   const {
     bookId,
     bookName,
