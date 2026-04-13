@@ -1,6 +1,10 @@
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
-import { getListFromLocalDB, setListToLocalDB } from "../utils/RedListLocalDB";
+import {
+  getListFromLocalDB,
+  removeBookFromLocalDB,
+  setListToLocalDB,
+} from "../utils/RedListLocalDB";
 
 export const BookContext = createContext();
 
@@ -49,11 +53,11 @@ const BookProvider = ({ children }) => {
     setListToLocalDB("wishList", currentBook);
   };
 
-  const handleDeleteFromReadList = (bookId) => {
-    const updatedReadList = markAsRead.filter((book) => book.bookId !== bookId);
-    setMarkAsRead(updatedReadList);
-    setListToLocalDB("redList", updatedReadList);
-    toast.success("Book removed from read list.");
+  const handleDeleteFromReadList = (dataType, bookId) => {
+    let typeText = dataType === "redList" ? "read list" : "wishlist";
+    let currentList = dataType === "redList" ? setMarkAsRead : setWishlist;
+    currentList(() => removeBookFromLocalDB(dataType, bookId));
+    toast.success(`Book deleted from ${typeText}.`);
   };
 
   const data = {
@@ -63,6 +67,7 @@ const BookProvider = ({ children }) => {
     wishlist,
     setWishlist,
     handleWishlist,
+    handleDeleteFromReadList,
   };
   return <BookContext.Provider value={data}>{children}</BookContext.Provider>;
 };

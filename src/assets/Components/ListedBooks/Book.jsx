@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { RiGroupLine } from "react-icons/ri";
+import { Link } from "react-router";
+import { BookContext } from "../../../context/BookContext";
 
-const Book = ({ book }) => {
+const Book = ({ book, dataType }) => {
+  const { handleDeleteFromReadList } = useContext(BookContext);
   return (
     <div className="card card-side bg-base-100 shadow-md border border-base-200 rounded-2xl overflow-hidden flex-col md:flex-row">
       <figure className="min-w-30 max-w-full md:max-w-30 p-4 flex items-center justify-center">
@@ -53,12 +57,17 @@ const Book = ({ book }) => {
             Rating: {book.rating}
           </span>
           <button className="btn btn-sm bg-green-500 text-white border-none rounded-full">
-            View Details
+            <Link to={`/book-details/${book.bookId}`}>View Details</Link>
           </button>
         </div>
       </div>
       <div className="card-actions flex-col items-center justify-center p-4">
-        <button className="btn w-full md:w-auto btn-warning">Delete</button>
+        <button
+          onClick={() => handleDeleteFromReadList(dataType, book.bookId)}
+          className="btn w-full md:w-auto btn-warning"
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

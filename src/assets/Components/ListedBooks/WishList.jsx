@@ -15,7 +15,7 @@ const WishList = ({ sortingType }) => {
   return (
     <div className="grid grid-cols-1 gap-4">
       {sortList.map((book) => (
-        <Book key={book.bookId} book={book} />
+        <Book key={book.bookId} book={book} dataType="wishList" />
       ))}
     </div>
   );

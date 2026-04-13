@@ -11,4 +11,12 @@ const setListToLocalDB = (key, book) => {
   }
 };
 
-export { getListFromLocalDB, setListToLocalDB };
+const removeBookFromLocalDB = (dataType, bookId) => {
+  const list = getListFromLocalDB(dataType);
+  const updatedList = list.filter((book) => book.bookId !== bookId);
+  localStorage.setItem(dataType, JSON.stringify(updatedList));
+  return updatedList;
+};
+
+export { getListFromLocalDB, removeBookFromLocalDB, setListToLocalDB };
+
