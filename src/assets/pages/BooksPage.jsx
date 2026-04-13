@@ -15,7 +15,7 @@ const BooksPage = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-lg bg-green-500 text-white border-none rounded-xl font-semibold text-lg "
+            className="btn btn-sm md:btn-lg bg-green-500 text-white border-none rounded-xl font-semibold text-lg "
           >
             Sort By: {sortingType || ""} <IoIosArrowDown />
           </div>
